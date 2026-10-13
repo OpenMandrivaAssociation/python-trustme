@@ -3,7 +3,7 @@
 
 Name:		python-trustme
 Version:	1.2.1
-Release:	2
+Release:	3
 Summary:	#1 quality TLS certs while you wait, for the discerning tester
 URL:		https://github.com/python-trio/trustme
 License:	MIT OR Apache-2.0
@@ -16,7 +16,7 @@ BuildRequires:	python
 BuildRequires:	python%{pyver}dist(hatchling)
 BuildRequires:	python%{pyver}dist(cryptography)
 BuildRequires:	python%{pyver}dist(idna)
-# tests
+%if %{with test}
 BuildRequires:	python%{pyver}dist(attrs)
 BuildRequires:	python%{pyver}dist(cffi)
 BuildRequires:	python%{pyver}dist(coverage)
@@ -29,6 +29,7 @@ BuildRequires:	python%{pyver}dist(pyopenssl)
 BuildRequires:	python%{pyver}dist(types-pyOpenSSL)
 BuildRequires:	python%{pyver}dist(pytest)
 BuildRequires:	python%{pyver}dist(service-identity)
+%endif
 
 
 %description
